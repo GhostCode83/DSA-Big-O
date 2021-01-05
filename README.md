@@ -2,7 +2,11 @@
 1. What is the Big O for this?
 1) Determine the Big O for the following algorithm: You are sitting in a room with 15 people. You want to find a playmate for your dog, preferably of the same breed. So you want to know if anyone out of the 15 people have the same breed as your dog. You stand up and yell out, who here has a golden retriever and would like to be a playdate for my golden. Someone yells - "I do, be happy to bring him over"
 
+  - Constant Time, because you are searching through a single array of people and returning a value.  It will be the same every time, regardless of the input.
+
+
 2) Determine the Big O for the following algorithm: You are sitting in a room with 15 people. You want to find a playmate for your dog who is of the same breed. So you want to know if anyone out of the 15 people have the same breed as your dog. You start with the first person and ask him if he has a golden retriever. He says no, then you ask the next person, and the next, and the next until you find someone who has a golden or there is no one else to ask.
+ - Linear time, because the more people you have to ask the more time it will take. (it would be polynomial if you are asking two questions, dog breed and interested in playdates)
 
 2. Even or odd
 What is the Big O of the following algorithm? Explain your answer
@@ -15,6 +19,9 @@ function isEven(value) {
         return false;
     }
 }
+
+constant time, this is a computation that has a conditional.  but whether it is 3497 or just 7, it does the computation and returns an answer.  
+
 3. Are you here?
 What is the Big O of the following algorithm? Explain your answer
 
@@ -28,6 +35,8 @@ function areYouHere(arr1, arr2) {
     }
     return false;
 }
+Polynomial time, for each loop through the array, there is a second loop.  
+
 4. Doubler
 What is the Big O of the following algorithm? Explain your answer
 
@@ -37,6 +46,9 @@ function doubleArrayValues(array) {
     }
     return array;
 }
+
+linear , the longer the array the more loops through that array then completes a basic computatation. because it is just one loop and does a basic operation it increases linearly 
+
 5. Naive search
 What is the Big O of the following algorithm? Explain your answer
 
@@ -47,6 +59,9 @@ function naiveSearch(array, item) {
         }
     }
 }
+
+Linear time, performs a single loop and a conditional.  as the size of the input increases, so does the operation time, with a direct correlation
+
 6. Creating pairs:
 What is the Big O of the following algorithm? Explain your answer
 
@@ -57,6 +72,9 @@ function createPairs(arr) {
         }
     }
 }
+
+Polynomial time, as this is a loop within a loop.  the operation time increases with each loop.  as input increases, time increases greatly.
+
 7. Compute the sequence
 What does the following algorithm do? What is its runtime complexity? Explain your answer
 
@@ -76,6 +94,9 @@ function compute(num) {
     }
     return result;
 }
+
+this algorithm is the fibonacci sequence.  It has a linear time complexity, as there is only one loop, and the number of iterations is in direct correlation to the input.
+
 8. An efficient search
 In this example, we return to the problem of searching using a more sophisticated approach than in naive search, above. Assume that the input array is always sorted. What is the Big O of the following algorithm? Explain your answer
 
@@ -101,12 +122,19 @@ function efficientSearch(array, item) {
     }
     return -1;
 }
+
+This function has logorithmic time complexity because it eliminates half values from the next loop, thus reducing the time complexity.  
+
 9. Random element
 What is the Big O of the following algorithm? Explain your answer
 
 function findRandomElement(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
+
+constant time complexity, although there are  multiple operations, they are all basic.  rounding down, random number between 0 and .99. and multiplication.    
+
+
 10. What Am I?
 What does the following algorithm do? What is the Big O of the following algorithm? Explain your answer
 
@@ -115,10 +143,13 @@ function isWhat(n) {
         return false;
     }
     for (let i = 2; i < n; ++i) {
-        if (n % i === 0) return false;
+        if (n % i === 0) return false; 
     }
     return true;
 }
+
+This algorithm finds if n is odd or even  whole numbers greater than or equal to 2.  If the value is odd, and over 2 it returns true.  It is a linear because the number of iterations are directly linked to the value of the input. 
+
 11. Tower of Hanoi
 The Tower of Hanoi is a very famous mathematical puzzle (some call it game!). This is how it goes:
 
@@ -147,5 +178,7 @@ Solve the drills 1 - 7 from your previous checkpoint (Recursion) iteratively.
 13. Recursive Big O
 Take your solutions from the recursive exercises that you completed in the previous checkpoint and identify the time complexities (big O) of each of them.
 
+
+
 14. Iterative Big O
-Take your solutions from the iterative exercises today and identify the time complexities (big O) of each of them.# DSA-Recursion
+Take your solutions from the iterative exercises today and identify the time complexities (big O) of each of them.# DSA-BST
